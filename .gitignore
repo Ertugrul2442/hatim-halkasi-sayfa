@@ -1,0 +1,11 @@
+# Bu depo YALNIZ gizlilik politikasi sayfasini yayinliyor.
+# Klasorde duran diger seyler buraya girmez.
+
+# Play'e yuklenen imzali paket. 43 MB; halka acik bir depoda isi yok
+# ve GitHub Pages'de zaten kullanilmiyor.
+*.aab
+*.apk
+
+# Magaza gorselleri, metinleri ve Console yol haritasi.
+# Gizli degil ama yayinlanan sayfanin parcasi da degil.
+magaza/
