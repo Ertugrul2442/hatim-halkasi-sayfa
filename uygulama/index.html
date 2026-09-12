@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <!--
+    base href'i ELLE DEGISTIRME. Asagidaki yer tutucu derleme aninda
+    `flutter build web --base-href ...` ile doluyor. GitHub Pages'te
+    site alt klasorde duruyor, yani kok "/" YANLIS olur: varliklar
+    bulunamaz ve sayfa sessizce BOS acilir.
+    Dogru komut (Git Bash'te MSYS yolu bozdugu icin onek sart):
+
+      MSYS_NO_PATHCONV=1 flutter build web --release \
+        --base-href /hatim-halkasi-sayfa/uygulama/
+  -->
+  <base href="/hatim-halkasi-sayfa/uygulama/">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Ortak hatim uygulamasi. Acin, size birkac ayet dussun, okuyup onaylayin. Hatmi birlikte tamamliyoruz. Ucretsiz, reklamsiz, uyeliksiz.">
+
+  <!-- iOS: ana ekrana eklenince uygulama gibi acilsin -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Hatim Halkası">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <meta name="theme-color" content="#14543F">
+
+  <title>Hatim Halkası</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    /* ACILIS GOSTERGESI — bos beyaz ekrani onluyor.
+       Flutter web'in ilk acilisi ~10 MB indiriyor (CanvasKit + yazi
+       tipleri). O sure boyunca sayfa BEMBEYAZ duruyordu; mobil veride
+       bu "site bozuk" gibi gorunuyor ve insan sekmeyi kapatiyor.
+       Renkler tema.dart'takilerin aynisi: yesilKoyu zemin, altin yazi. */
+    html, body { margin: 0; padding: 0; height: 100%; background: #0C3527; }
+    #acilis {
+      position: fixed; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 14px;
+      background: #0C3527; color: #E5C87E; z-index: 9999;
+      font-family: Georgia, "Times New Roman", serif; text-align: center;
+      transition: opacity .4s ease;
+    }
+    #acilis .ad { font-size: 1.45rem; letter-spacing: .02em; }
+    #acilis .not { font-size: .85rem; color: #B8892B; }
+    #acilis .halka {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 2px solid rgba(229, 200, 126, .25);
+      border-top-color: #E5C87E; animation: don 1s linear infinite;
+    }
+    @keyframes don { to { transform: rotate(360deg); } }
+    /* Hareketi azalt diyen kullaniciya donen halka gosterilmiyor. */
+    @media (prefers-reduced-motion: reduce) {
+      #acilis .halka { animation: none; border-top-color: rgba(229,200,126,.25); }
+    }
+  </style>
+</head>
+<body>
+  <div id="acilis">
+    <div class="halka"></div>
+    <div class="ad">Hatim Halkası</div>
+    <div class="not">yükleniyor…</div>
+  </div>
+
+  <script>
+    // Flutter ilk kareyi cizdigi anda gostergeyi kaldir.
+    // 'flutter-first-frame' Flutter'in kendi resmi olayi; "biraz bekle
+    // sonra kaldir" gibi bir zamanlayici KULLANILMIYOR, cunku yavas
+    // sebekede gosterge bos ekrandan once kalkar ve is tersine doner.
+    window.addEventListener('flutter-first-frame', function () {
+      var a = document.getElementById('acilis');
+      if (!a) return;
+      a.style.opacity = '0';
+      setTimeout(function () { a.remove(); }, 400);
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

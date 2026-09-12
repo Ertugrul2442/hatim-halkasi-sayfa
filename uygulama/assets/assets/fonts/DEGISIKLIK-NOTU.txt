@@ -1,0 +1,38 @@
+HATIM NASKH — degistirilmis yazi tipi bildirimi
+================================================
+
+Bu uygulamadaki Kur'an metni "Hatim Naskh" adli yazi tipiyle
+gosteriliyor. Hatim Naskh, SIL International'in **Scheherazade New**
+yazi tipinin degistirilmis bir surumudur.
+
+  Kaynak      : Scheherazade New, Copyright (c) SIL International
+  Lisans      : SIL Open Font License, Version 1.1
+  Lisans metni: bu klasordeki OFL-ScheherazadeNew.txt
+
+YAPILAN DEGISIKLIK
+------------------
+Iki karakterin sekli degistirildi:
+
+  U+06EB  ->  "med"  yazisi     (metinde 247 kez geciyor)
+  U+06EC  ->  "kasr" yazisi     (metinde 492 kez geciyor)
+
+Sebep: Diyanet mushafi imlasinda bu iki kod, "med" ve "kasr" tecvid
+isaretleri anlaminda kullaniliyor. Unicode'da bu iki isaretin ayri bir
+karsiligi yok, dolayisiyla metnin kodu degistirilerek cozulemiyor.
+
+Sekiller elle cizilmedi: yazi tipinin KENDI harfleri (م+د ve ق+ص+ر)
+sekillendirilip kucultuldu ve isaret konumuna oturtuldu. Boylece harf
+bicimleri yazi tipinin geri kalaniyla ayni kalemden cikmis oluyor.
+Baska hicbir sekle, tabloya ya da ozelliğe dokunulmadi.
+
+Ureten betik: arac/yazitipi_yamala.py (yeniden calistirilabilir)
+
+ISIM DEGISIKLIGI
+----------------
+SIL OFL 1.1, "Scheherazade" adini Ayrilmis Isim (Reserved Font Name)
+olarak korur. Degistirilmis surum bu adi tasiyamaz; bu yuzden yazi
+tipinin adi "Hatim Naskh" olarak degistirildi. SIL'in telif bildirimi
+ve lisans metni oldugu gibi korunmustur.
+
+Hatim Naskh da ayni lisansla, SIL Open Font License 1.1 altinda
+dagitilmaktadir.
