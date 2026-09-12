@@ -23457,11 +23457,11 @@ s=A.aMT("realtime:hatim-degisiklik",r,B.Bs)
 B.b.u(r.b,s)
 return s.ako(new A.aeA(a),B.wT,"public","hatim").Yb()},
 nz(a){var s,r
-if(a instanceof A.hB&&a.a==="bot_kalkani_gecilemedi")return'G\xfcvenlik do\u011frulamas\u0131 yap\u0131lamad\u0131. \u0130nternetin \xe7al\u0131\u015f\u0131yorsa \u015funu dene: Play Store\'da "Android System WebView"i bulup g\xfcncelle, sonra uygulamay\u0131 tamamen kapat\u0131p yeniden a\xe7.'
+if(a instanceof A.hB&&a.a==="bot_kalkani_gecilemedi")return"G\xfcvenlik do\u011frulamas\u0131 yap\u0131lamad\u0131. Sayfay\u0131 yenileyip tekrar dene; yine olmazsa reklam engelleyiciyi bu site i\xe7in kapat ya da uygulamay\u0131 Play Store'dan indir."
 if(!(a instanceof A.kZ)){A.e0().$1("HATA: beklenmedik t\xfcr \u2014 "+A.e(a))
 return"Ba\u011flant\u0131 kurulamad\u0131. \u0130nternetini kontrol edip tekrar dene."}s=a.a
 if(a.b==="42501"||B.c.p(s,"permission denied")){A.e0().$1("HATA: yetki reddi (oturum yok) \u2014 "+s)
-return'Kimli\u011fin al\u0131namad\u0131\u011f\u0131 i\xe7in sunucu iste\u011fi kabul etmedi. Uygulamay\u0131 tamamen kapat\u0131p yeniden a\xe7; yine olmazsa Play Store\'dan "Android System WebView"i g\xfcncelle.'}switch(s){case"giris_gerekli":return"Kimlik al\u0131namad\u0131. Uygulamay\u0131 kapat\u0131p a\xe7ar m\u0131s\u0131n?"
+return"Kimli\u011fin al\u0131namad\u0131\u011f\u0131 i\xe7in sunucu iste\u011fi kabul etmedi. Sayfay\u0131 yenileyip tekrar dener misin?"}switch(s){case"giris_gerekli":return"Kimlik al\u0131namad\u0131. Uygulamay\u0131 kapat\u0131p a\xe7ar m\u0131s\u0131n?"
 case"zaten_emanetin_var":return"Elinde okunmay\u0131 bekleyen bir pay var. \xd6nce onu bitir ya da b\u0131rak."
 case"cok_erken":r=J.bA(a.c)
 return"Biraz daha vaktin var \u2014 "+r+" saniye sonra onaylayabilirsin."
